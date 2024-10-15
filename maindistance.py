@@ -19,8 +19,8 @@ while True:
         wire_resistance = prox_sensor()
         distance = wire_resistance / meter_wire
         dist_cent = distance * 100
-        print('distance is', distance, 'centimeters')
-        #thingspeak_http = f'https://api.thingspeak.com/update?api_key=TÄHÄN APIKEY JA OIKEA FIELD&field1={dist}'
+        print('distance is', dist_cent, 'centimeters')
+        #thingspeak_http = f'https://api.thingspeak.com/update?api_key=TÄHÄN APIKEY JA OIKEA FIELD&field1={dist_cent}'
         #response = urequests.get(thingspeak_http)
         #response.close()
         time.sleep(1)
