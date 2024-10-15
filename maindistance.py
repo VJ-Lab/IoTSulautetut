@@ -20,7 +20,7 @@ while True:
         distance = wire_resistance / meter_wire
         dist_cent = distance * 100
         print('distance is', distance, 'centimeters')
-        #thingspeak_http = f'https://api.thingspeak.com/update?api_key=WF54IOIFWM22VI34&field1={dist}'
+        #thingspeak_http = f'https://api.thingspeak.com/update?api_key=TÄHÄN APIKEY JA OIKEA FIELD&field1={dist}'
         #response = urequests.get(thingspeak_http)
         #response.close()
         time.sleep(1)
