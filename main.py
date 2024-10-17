@@ -3,20 +3,19 @@ import time
 import machine
 import urequests
 
-ssid = 'sipilanmaeki_mesh_Wi-Fi5'
-password = 'xxxx'
+SSID = 'sipilanmaeki_mesh_Wi-Fi5'
+PASSWORD = 'xxxx'
 
 def connect_to_wifi():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect(ssid, password)
-
-    # Odota, kunnes yhteys muodostuu
+    wlan.connect(SSID, PASSWORD)
+    
     while not wlan.isconnected():
-        print("Yhdistetään...")
+        print("Connecting...")
         time.sleep(1)
 
-    print("Yhdistetty verkkoon", wlan.ifconfig())
+    print("Connected", wlan.ifconfig())
 
 connect_to_wifi()
 
