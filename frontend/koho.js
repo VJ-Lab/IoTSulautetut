@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        fetch('https://api.thingspeak.com/channels/2676491/feeds.json?apikey=xxx&results=10&timezone=Europe/Helsinki')
+        fetch('https://api.thingspeak.com/channels/2699657/feeds.json?api_key=GS77U4B8XUNMOHWR&results=10&timezone=Europe/Helsinki')
         .then(response => response.json())
         .then(APIdata => {
             const feeds = APIdata.feeds;
