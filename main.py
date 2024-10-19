@@ -31,7 +31,7 @@ def floating_duck():
 while True:
     try:
         water_in_bucket = floating_duck()
-        thingspeak_http = f'https://api.thingspeak.com/update?api_key=MAK29ZJ63741FKRP&field1={water_in_bucket}'
+        thingspeak_http = f'https://api.thingspeak.com/update?api_key=xxx&field1={water_in_bucket}'
         print(water_in_bucket)
         response = urequests.get(thingspeak_http)
         response.close()
