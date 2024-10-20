@@ -1,4 +1,5 @@
 Kohomittari
+
   Rakennetaan kodin tarvikkeista kohomittari joka kertoo veden määrän 10 L ämpärissä.​
   Potentiometrin arvot muutetaan litroiksi 
 
