@@ -1,7 +1,8 @@
 Kohomittari
 
-  Rakennetaan kodin tarvikkeista kohomittari joka kertoo veden määrän 10 L ämpärissä.​
-  Potentiometrin arvot muutetaan litroiksi 
+Rakennetaan kodin tarvikkeista kohomittari joka kertoo veden määrän 10 L ämpärissä.​
+
+Potentiometrin arvot muutetaan litroiksi 
 
 ![potentiometerkoho](https://github.com/user-attachments/assets/6647c384-5240-4866-985d-0af7fd529971)
 
@@ -9,10 +10,10 @@ Potentiometriin rakennettiin vipu jonka toisessa päässä on kelluva kumiankka 
 
 Huomioitavaa/Virhearviot:​
 
-  Kumiankka kiinnitetty narulla.​
+Kumiankka kiinnitetty narulla.​
 
-  Picon jännite/ADC​
+Picon jännite/ADC​
 
-  Kytkennät kytkentälevyssä, potentiometri heiluu, ei jämäkkä.
+Kytkennät kytkentälevyssä, potentiometri heiluu, ei jämäkkä.
 
 Videolinkki
