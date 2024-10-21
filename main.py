@@ -3,7 +3,7 @@ import time
 import machine
 import urequests
 
-SSID = 'sipilanmaeki_mesh_Wi-Fi5'
+SSID = 'yyyy'
 PASSWORD = 'xxxx'
 
 def connect_to_wifi():
