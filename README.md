@@ -12,7 +12,9 @@ Potentiometriin rakennettiin vipu jonka toisessa päässä on kelluva kumiankka 
 
 ![vipu](https://github.com/user-attachments/assets/36abab1d-e377-4863-95e4-d5990e74cc51)
 
-Videolinkki lisätään myöhemmin
+Videolinkki esitykseen
+
+[![Video Title](https://img.youtube.com/vi/R_TpAHw-vdo/0.jpg)](https://www.youtube.com/watch?v=R_TpAHw-vdo)
 
 ### Asennusohjeet:
 1. Tee kytkennät kuvan pohjalta
