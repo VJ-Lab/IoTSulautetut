@@ -3,8 +3,8 @@ import utime
 import machine
 import urequests
 
-ssid = 'sipilanmaeki_mesh_Wi-Fi5'
-password = 'tessaelisabet21'
+ssid = 'xx'
+password = 'xx'
 switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 led = machine.Pin(16, machine.Pin.OUT)
 
@@ -35,7 +35,7 @@ while True:
     try:
         water_in_bucket = floating_duck()
         print(water_in_bucket)
-        thingspeak_http = f'https://api.thingspeak.com/update?api_key=MAK29ZJ63741FKRP&field1={water_in_bucket}'
+        thingspeak_http = f'https://api.thingspeak.com/update?api_key=xx&field1={water_in_bucket}'
         response = urequests.get(thingspeak_http)
         response.close()
         if switch.value(): #or water_in_bucket >= 9.9
