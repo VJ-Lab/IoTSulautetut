@@ -38,7 +38,7 @@ while True:
         thingspeak_http = f'https://api.thingspeak.com/update?api_key=xx&field1={water_in_bucket}'
         response = urequests.get(thingspeak_http)
         response.close()
-        if switch.value(): or water_in_bucket >= 9.9
+        if switch.value() or water_in_bucket >= 9.9:
                 led.value(True)
                 print("Ämpäri täysi!")
         else:
