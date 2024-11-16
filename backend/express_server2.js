@@ -33,7 +33,22 @@ app.get('/liters', (req, res) => {
     }
     res.json(result.recordset);
     });
+});
+// POST endpoint > Temperature, Parameterized Query
+app.post('/post_liters', (req, res) => {
+    const { Liters } = req.body;
+    const request = new sql.Request();
+    request.input('LitersValue', sql.Float, Liters);
+    request.query('INSERT INTO Testi (Liters) VALUES (@LitersValue);', (err, result) => {
+    if (err) {
+    console.error('Error executing query:', err);
+    res.status(500).send('Server error');
+    return;
+    }
+    res.json({ id: result.insertId, temp, timestamp });
     });
+});
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
