@@ -2,6 +2,7 @@ a05b6ae
 untracked-file.txt
 /node_modules
 /package-lock.json
-/package.json
-/.env
 /.DS_Store
+/package.json
+/.vscode
+/.env
