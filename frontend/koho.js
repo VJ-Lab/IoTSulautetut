@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(initChart);
 
+  function initChart() {
+    drawChart();
+    setInterval(drawChart, 1000);
+  }
   function drawChart() {
     fetch("https://kohoankka2.azurewebsites.net/litrat")
       .then((response) => response.json())
