@@ -4,8 +4,8 @@ import machine
 import urequests
 import json
 
-SSID = 'sipilanmaeki_mesh'
-PASSWORD = 'tessaelisabet21'
+SSID = 'xx'
+PASSWORD = 'xx'
 switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 led = machine.Pin(16, machine.Pin.OUT)
 
