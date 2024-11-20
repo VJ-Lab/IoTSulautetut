@@ -25,11 +25,13 @@ https://www.youtube.com/watch?v=R_TpAHw-vdo
 
 ### Huomioitavaa/Virhearviot:​
 
-    Potentiometri hyvin herkkä, vaikea löytää tasaista "nolla-arvoa".  Joka kerta kun ämpäri tyhjeni, täytyi nolla-arvo asettaa koodiin uudestaan. Tämä johtui siitä, että kumiankkaa roikkuu narun päässä ja asettuu joka kerta eri tavalla ämpärin pohjalle.​
+Potentiometri hyvin herkkä, vaikea löytää tasaista "nolla-arvoa".  Joka kerta kun ämpäri tyhjeni, täytyi nolla-arvo asettaa koodiin uudestaan. Tämä johtui siitä, että kumiankkaa roikkuu narun päässä ja asettuu joka kerta eri tavalla ämpärin pohjalle.​
 
-    Arvo heittelee 0.1-0.3.​
+Arvo heittelee 0.1-0.3.​
 
-    LEDin syttyy/sammuu viiveellä, johtuen responsen odottelusta APIlta. 1-2sek.​
+LEDin syttyy/sammuu viiveellä, johtuen responsen odottelusta APIlta. 1-2sek.​
+
+
 
     ​
 
