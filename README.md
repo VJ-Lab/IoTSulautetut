@@ -31,8 +31,4 @@ Arvo heittelee 0.1-0.3.​
 
 LEDin syttyy/sammuu viiveellä, johtuen responsen odottelusta APIlta. 1-2sek.​
 
-
-
-    ​
-
-    Potentiometriä tuettiin jatkokehittelyssä, koska se heilui kytkentälevyssä. Kolvaus piirilevyyn olisi ollut paras vaihtoehto.
+Potentiometriä tuettiin jatkokehittelyssä, koska se heilui kytkentälevyssä. Kolvaus piirilevyyn olisi ollut paras vaihtoehto.
