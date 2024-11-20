@@ -4,7 +4,7 @@ Rakennetaan kodin tarvikkeista kohomittari joka kertoo veden määrän 10 L ämp
 
 Potentiometrin arvot muutetaan litroiksi
 
-### Nopea kuva kytkennästä:
+### Nopea kuva Versio 1 kytkennästä:
 
 ![potentiometerkoho](https://github.com/user-attachments/assets/6647c384-5240-4866-985d-0af7fd529971)
 
