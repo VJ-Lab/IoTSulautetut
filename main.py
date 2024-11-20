@@ -1,29 +1,32 @@
 import network
-import time
+import utime
 import machine
 import urequests
+import json
 
-SSID = 'yyyy'
-PASSWORD = 'xxxx'
+SSID = 'xx'
+PASSWORD = 'xx'
+switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
+led = machine.Pin(16, machine.Pin.OUT)
 
 def connect_to_wifi():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(SSID, PASSWORD)
-    
-    while not wlan.isconnected():
-        print("Connecting...")
-        time.sleep(1)
 
-    print("Connected", wlan.ifconfig())
+    while not wlan.isconnected():
+        print("Yhdistetään...")
+        utime.sleep(1)
+
+    print("Yhdistetty verkkoon", wlan.ifconfig())
 
 connect_to_wifi()
 
 def floating_duck():
     pot = machine.ADC(26)
     potValue = pot.read_u16()
-    full_bucket = 32000
-    empty_bucket = 50800
+    full_bucket = 32450
+    empty_bucket = 48600
     bucket_status = (empty_bucket - potValue) / (empty_bucket - full_bucket) * 10
     liters = round(bucket_status, 1)
     return liters
@@ -31,10 +34,19 @@ def floating_duck():
 while True:
     try:
         water_in_bucket = floating_duck()
-        thingspeak_http = f'https://api.thingspeak.com/update?api_key=xxx&field1={water_in_bucket}'
         print(water_in_bucket)
-        response = urequests.get(thingspeak_http)
+        url = 'https://kohoankka2.azurewebsites.net/post_litrat'
+        headers = {'Content-Type': 'application/json'}
+        data = {
+             "Litra": water_in_bucket
+        }
+        response = urequests.post(url, headers=headers, data=json.dumps(data))
         response.close()
-        time.sleep(1)
+        if switch.value() or water_in_bucket >= float(9.9):
+                led.value(True)
+                print("Ämpäri täysi!")
+        else:
+                led.value(False)
     except Exception as e:
         print("Error:", e)
+
