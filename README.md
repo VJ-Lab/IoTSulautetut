@@ -25,8 +25,12 @@ https://www.youtube.com/watch?v=R_TpAHw-vdo
 
 ### Huomioitavaa/Virhearviot:​
 
-Kumiankka kiinnitetty narulla.​
+    Potentiometri hyvin herkkä, vaikea löytää tasaista "nolla-arvoa".  Joka kerta kun ämpäri tyhjeni, täytyi nolla-arvo asettaa koodiin uudestaan. Tämä johtui siitä, että kumiankkaa roikkuu narun päässä ja asettuu joka kerta eri tavalla ämpärin pohjalle.​
 
-Picon jännite/ADC​
+    Arvo heittelee 0.1-0.3.​
 
-Kytkennät kytkentälevyssä, potentiometri heiluu, ei jämäkkä.
+    LEDin syttyy/sammuu viiveellä, johtuen responsen odottelusta APIlta. 1-2sek.​
+
+    ​
+
+    Potentiometriä tuettiin jatkokehittelyssä, koska se heilui kytkentälevyssä. Kolvaus piirilevyyn olisi ollut paras vaihtoehto.
