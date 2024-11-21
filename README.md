@@ -8,6 +8,10 @@ Potentiometrin arvot muutetaan litroiksi
 
 ![potentiometerkoho](https://github.com/user-attachments/assets/6647c384-5240-4866-985d-0af7fd529971)
 
+### Nopea kuva Versio 2 kytkennästä:
+
+![Jokin2_bb](https://github.com/user-attachments/assets/4d209aef-99ec-482c-a97b-7a1e286db01e)
+
 Potentiometriin rakennettiin vipu jonka toisessa päässä on kelluva kumiankka ja toisessa päässä vastapaino jotta naru jolla kumiankka on kiinnitetty, pysyy kireänä.
 
 ![vipu](https://github.com/user-attachments/assets/36abab1d-e377-4863-95e4-d5990e74cc51)
@@ -16,15 +20,19 @@ Potentiometriin rakennettiin vipu jonka toisessa päässä on kelluva kumiankka 
 
 Linkki videoesitykseen
 
+Versio 1
+
 https://www.youtube.com/watch?v=R_TpAHw-vdo
+
+Versio 2 linkki lisätään kohta
 
 ### Asennusohjeet:
 1. Tee kytkennät kuvan pohjalta
 2. Askartele vipu ja kiinnitä se potentiometriin.
-3. Lataa ja muokkaa koodia. Erityisesti joudut vaihtamaan mihin tukiasemaan se ottaa yhteyttä laitekoodista. Tarvitset myös databasen ja joudut muokkaamaan minne API koodi ottaa yhteyttä, jotta voit tehdä haut ja lähettää tietoa oikein.
+3. Lataa ja muokkaa koodia. Erityisesti joudut vaihtamaan mihin tukiasemaan se ottaa yhteyttä laitekoodista. Tarvitset myös tietokannan ja joudut muokkaamaan minne API koodi ottaa yhteyttä, jotta voit tehdä haut ja lähettää tietoa oikein.
 4. Lisää main.py Raspberry pi pico W:hen.
 5. Jos olet tehnyt oikeat muokkaukset ja annat pi pico W:lle virtaan, laitteen pitäisi toimia oikein.
-6. Frontend koodi on tehty hakemaan esimerkin API:lta ja databasesta, joten näitä pitää muokata oman käyttötarkoituksen perusteella.
+6. Frontend koodi on tehty hakemaan esimerkin API:lta ja tieotkannasta, joten näitä pitää muokata oman käyttötarkoituksen perusteella.
 
 ### Huomioitavaa/Virhearviot:​
 
