@@ -25,7 +25,7 @@ function App() {
 
   const fetchTemperature = async () => {
     try {
-      const response = await fetch("http://192.168.3.29:8080/temp");
+      const response = await fetch("http://192.168.x.xx:8080/temp");
       const data = await response.json();
       setTemperature(data.temperature);
     } catch (error) {
@@ -66,7 +66,7 @@ function App() {
     const data = { liters: parseFloat(liters) };
 
     try {
-      const response = await fetch("http://192.168.3.29:8080/set-liters", {
+      const response = await fetch("http://192.168.x.xx:8080/set-liters", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

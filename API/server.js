@@ -51,7 +51,7 @@ app.get("/litrat", (req, res) => {
 });
 app.get("/temp", async (req, res) => {
   try {
-    const picoResponse = await axios.get("http://192.168.3.29:8080/temp");
+    const picoResponse = await axios.get("http://192.168.x.xx:8080/temp");
     const temperature = picoResponse.data.temperature;
     res.json({ temperature });
   } catch (error) {
