@@ -24,7 +24,9 @@ Versio 1
 
 https://www.youtube.com/watch?v=R_TpAHw-vdo
 
-Versio 2 linkki lisätään kohta
+Versio 2
+
+https://www.youtube.com/watch?v=YFwMKVr-zrs
 
 ### Asennusohjeet:
 1. Tee kytkennät kuvan pohjalta

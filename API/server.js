@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-
+const axios = require("axios");
 const cors = require("cors");
 const sql = require("mssql");
 
@@ -18,10 +18,9 @@ const config = {
 
 sql.connect(config, (err) => {
   if (err) {
-    console.error("Error connecting to the SQL server:", err);
+    console.error("Virhe yhdistettäessä SQL serveriin:", err);
     return;
   }
-  console.log("Connected to the SQL server.");
 });
 
 app.use(express.json());
@@ -38,14 +37,27 @@ app.use((req, res, next) => {
 
 app.get("/litrat", (req, res) => {
   const request = new sql.Request();
-  request.query("SELECT * FROM Litra", (err, result) => {
-    if (err) {
-      console.error("Error executing query:", err);
-      res.status(500).send("Server error");
-      return;
+  request.query(
+    "SELECT TOP 20 CONVERT(VARCHAR(33), CreatedAt, 126) AS CreatedAt, Litra FROM Litra ORDER BY CreatedAt DESC;",
+    (err, result) => {
+      if (err) {
+        console.error("Virhe kyselyn suorittamisessa:", err);
+        res.status(500).send("Serveri virhe");
+        return;
+      }
+      res.json(result.recordset);
     }
-    res.json(result.recordset);
-  });
+  );
+});
+app.get("/temp", async (req, res) => {
+  try {
+    const picoResponse = await axios.get("http://192.168.x.xx:8080/temp");
+    const temperature = picoResponse.data.temperature;
+    res.json({ temperature });
+  } catch (error) {
+    console.error("Virhe kommunikoidessa Pico W:n kanssa, ", error);
+    res.status(500).send("Virhe lämpötilan haussa.");
+  }
 });
 
 app.post("/post_litrat", (req, res) => {
@@ -56,8 +68,8 @@ app.post("/post_litrat", (req, res) => {
     "INSERT INTO Litra (Litra) VALUES (@LitraValue)",
     (err, result) => {
       if (err) {
-        console.error("Error executing query:", err);
-        res.status(500).send("Server error");
+        console.error("Virhe kyselyn suorittamisessa:", err);
+        res.status(500).send("Serveri virhe");
         return;
       }
       res.json({ ID: result.insertId, Litra });
@@ -66,5 +78,5 @@ app.post("/post_litrat", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Serveri pyörii osoitteessa: http://localhost:${port}`);
 });
