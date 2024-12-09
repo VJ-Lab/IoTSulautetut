@@ -21,6 +21,11 @@ function App() {
       ];
 
       setChartData(transformedData);
+
+      if (latestData.length > 0) {
+        const latestCreatedAt = parseCreatedAt(latestData[0].CreatedAt);
+        setLastUpdated(latestCreatedAt);
+      }
     } catch (error) {
       console.error("Virhe datan haussa:", error);
     }
@@ -36,18 +41,27 @@ function App() {
 
       if (data.length > 0 && data[0].Temperature !== undefined) {
         const roundedTemperature = parseFloat(data[0].Temperature).toFixed(2);
-        const createdAt = parseCreatedAt(data[0].CreatedAt);
-        const now = new Date();
-        const diffMinutes = (now - createdAt) / (1000 * 60);
 
-        if (diffMinutes > 15) {
-          setTemperature(null);
-          setStatus("Anturi offline");
-        } else {
-          setTemperature(roundedTemperature);
-          setLastUpdated(createdAt);
-          setStatus("");
+        const now = new Date();
+
+        if (lastUpdated) {
+          const localLastUpdated = new Date(
+            lastUpdated.getTime() + 2 * 60 * 60 * 1000
+          );
+
+          const diffMinutes =
+            (now.getTime() - localLastUpdated.getTime()) / (1000 * 60);
+          console.log(`Viime päivityksestä kulunut: ${diffMinutes} min`);
+
+          if (diffMinutes > 15) {
+            setTemperature(null);
+            setStatus("Anturi offline");
+            return;
+          }
         }
+
+        setTemperature(roundedTemperature);
+        setStatus("");
       } else {
         console.error("Data ei sisältänyt odotettua Temperature-arvoa");
         setTemperature(null);
@@ -61,12 +75,22 @@ function App() {
   };
 
   const parseCreatedAt = (createdAt) => {
+    if (!createdAt || typeof createdAt !== "string") {
+      console.error("Virheellinen CreatedAt-arvo:", createdAt);
+      return new Date(NaN);
+    }
+
     let date = new Date(createdAt);
     if (isNaN(date)) {
-      const [datePart, timePart] = createdAt.split(" ");
-      const [day, month, year] = datePart.split(".");
-      const isoString = `${year}-${month}-${day}T${timePart}Z`;
-      date = new Date(isoString);
+      try {
+        const [datePart, timePart] = createdAt.split(" ");
+        const [day, month, year] = datePart.split(".");
+        const isoString = `${year}-${month}-${day}T${timePart}Z`;
+        date = new Date(isoString);
+      } catch (error) {
+        console.error("Virhe CreatedAt-muodon käsittelyssä:", error);
+        return new Date(NaN);
+      }
     }
     return date;
   };
