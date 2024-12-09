@@ -7,8 +7,8 @@ import onewire
 import ds18x20
 import uasyncio as asyncio
 
-SSID = 'sipilanmaeki_mesh'
-PASSWORD = 'tessaelisabet21'
+SSID = 'xxx'
+PASSWORD = 'xxx'
 switch = machine.Pin(14, machine.Pin.IN, machine.Pin.PULL_DOWN)
 led = machine.Pin(16, machine.Pin.OUT)
 temp_pin = machine.Pin(15)
