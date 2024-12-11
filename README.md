@@ -36,9 +36,9 @@ Versio 2
 
 https://www.youtube.com/watch?v=YFwMKVr-zrs
 
-Versio 3
+Versio 3 ei löydy kuin demo video
 
-Demo video lisätään myöhemmin
+https://youtu.be/qWaQ7QKZF84
 
 ### Asennusohjeet:
 1. Tee kytkennät kuvan pohjalta
