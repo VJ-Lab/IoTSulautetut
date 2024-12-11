@@ -48,8 +48,10 @@ https://youtu.be/qWaQ7QKZF84
 5. Jos olet tehnyt oikeat muokkaukset ja annat pi pico W:lle virtaan, laitteen pitäisi toimia oikein.
 6. Frontend koodi on tehty hakemaan esimerkin API:lta ja tietokannasta, joten näitä pitää muokata oman käyttötarkoituksen perusteella.
 
-### Huomioitavaa/Virhearviot:​
+### Linkki Drive kansioon käyttöohjeisiin ja testausraporttiin
+https://drive.google.com/drive/folders/1uOZh9tnuQyIUOzOkjC4n3tuva0LZoBI9?usp=sharing
 
+### Huomioitavaa/Virhearviot:​
 Potentiometri hyvin herkkä, vaikea löytää tasaista "nolla-arvoa".  Joka kerta kun ämpäri tyhjeni, täytyi nolla-arvo asettaa koodiin uudestaan. Tämä johtui siitä, että kumiankkaa roikkuu narun päässä ja asettuu joka kerta eri tavalla ämpärin pohjalle.​
 
 Arvo heittelee 0.1-0.3.​
